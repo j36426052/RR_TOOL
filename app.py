@@ -27,7 +27,9 @@ def get_tft_data():
         "XXHjQ-hMizN0uuYVS4eQom6m8bqhBuNRG4yiiU8RKpChEi0RG1hlZx4Dmw": "學姊",
         "dUwDc88RO_-_-DkENeDmH8AM1Cv7msk7LKOD0k9ERAAAUbSd00fxvmoLPQ": "承育",
         "g70Q_AC1Ljb3u7uJvbnhzQNDowUjzAbX9cRMYqCUqd8Qz42dzRRL0IG3-Q": "俊暉",
-        "aRiEDFdMBDC1cNuWngnDtwfNhBTqBoowdeVe1LwDDd14rA32hNgwWdDDZw": "柏維"
+        "aRiEDFdMBDC1cNuWngnDtwfNhBTqBoowdeVe1LwDDd14rA32hNgwWdDDZw": "柏維",
+        "FJEn0MMKY7SBQE5x-LykAYE4wUrn1_gY27rkocV8X-UZacacmyiflICZKg": "西瓜",
+        "H4n-spTO-5NhXFxYySsoAZKJiNRNOwqrDWefdOCnaeCZ-JZjlkqyTgmcpg": "子郡"
     }
 
     all_data = {}
