@@ -9,11 +9,19 @@ function updatePlayerData() {
                 const rankOrder = ['CHALLENGER', 'GRANDMASTER', 'MASTER', 'DIAMOND', 'PLATINUM', 'GOLD', 'SILVER', 'BRONZE', 'IRON'];
                 const rankA = a[1][0].tier;
                 const rankB = b[1][0].tier;
+                const divisionOrder = ['I', 'II', 'III', 'IV'];
                 const lpA = a[1][0].leaguePoints;
                 const lpB = b[1][0].leaguePoints;
+                const divA = a[1][0].rank;
+                const divB = b[1][0].rank;
 
                 if (rankA === rankB) {
-                    return lpB - lpA;
+                    if (divA == divB){
+                        return lpB - lpA;
+                    }
+                    return divisionOrder.indexOf(divA) - divisionOrder.indexOf(divB);
+
+                    //return lpB - lpA;
                 }
                 return rankOrder.indexOf(rankA) - rankOrder.indexOf(rankB);
             });

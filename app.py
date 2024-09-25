@@ -27,7 +27,7 @@ def get_tft_data():
         "XXHjQ-hMizN0uuYVS4eQom6m8bqhBuNRG4yiiU8RKpChEi0RG1hlZx4Dmw": "學姊",
         "dUwDc88RO_-_-DkENeDmH8AM1Cv7msk7LKOD0k9ERAAAUbSd00fxvmoLPQ": "承育",
         "g70Q_AC1Ljb3u7uJvbnhzQNDowUjzAbX9cRMYqCUqd8Qz42dzRRL0IG3-Q": "俊暉",
-        "-gBAzolMXyy7LA3K2Q37vlRb6dkmJk8lbl1mtCOuBdktrrn-3hO0RvQYLA":"柏維"
+        "aRiEDFdMBDC1cNuWngnDtwfNhBTqBoowdeVe1LwDDd14rA32hNgwWdDDZw": "柏維"
     }
 
     all_data = {}
