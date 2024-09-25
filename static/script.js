@@ -34,7 +34,8 @@ function updatePlayerData() {
                     <img src="/static/images/${player.tier.toLowerCase()}.webp" alt="${player.tier}" class="rank-icon">
                     <div class="player-info">
                         <div class="player-name">${name}</div>
-                        <div class="player-rank">${player.tier} ${player.rank}</div>
+                        <div class="player-rank">${player.rank}</div>
+                        <span class="spacer"></span>
                         <div class="player-lp">${player.leaguePoints} LP</div>
                     </div>
                 `;
