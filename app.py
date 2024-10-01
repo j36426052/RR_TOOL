@@ -22,22 +22,23 @@ def get_tft_data():
 
     # 玩家 ID 和暱稱的映射
     SUMMONER_IDS = {
-        "7_58-FG0wG1MyLrDeP1aHQgJ8tj-Igb3YdTGO9RAoLSmNMTNkCBmm8LVZQ": "Q蛇",
-        "-gBAzolMXyy7LA3K2Q37vlRb6dkmJk8lbl1mtCOuBdktrrn-3hO0RvQYLA": "礎揚",
-        "XXHjQ-hMizN0uuYVS4eQom6m8bqhBuNRG4yiiU8RKpChEi0RG1hlZx4Dmw": "學姊",
-        "dUwDc88RO_-_-DkENeDmH8AM1Cv7msk7LKOD0k9ERAAAUbSd00fxvmoLPQ": "承育",
-        "g70Q_AC1Ljb3u7uJvbnhzQNDowUjzAbX9cRMYqCUqd8Qz42dzRRL0IG3-Q": "俊暉",
-        "aRiEDFdMBDC1cNuWngnDtwfNhBTqBoowdeVe1LwDDd14rA32hNgwWdDDZw": "柏維",
-        "FJEn0MMKY7SBQE5x-LykAYE4wUrn1_gY27rkocV8X-UZacacmyiflICZKg": "西瓜",
-        "H4n-spTO-5NhXFxYySsoAZKJiNRNOwqrDWefdOCnaeCZ-JZjlkqyTgmcpg": "子郡"
+        "FaW_WlA-9IraPO13OFUmS4pT_aVpF1SfaYGlyAiJmUejRYXZe4TVg2j6Sg": "Q蛇",
+        "CF-pD_Fpj3n1M6b37kTstf40nkgUeKILduoNFYwhjL32_CEbbO00ij9dyA": "礎揚",
+        "oLe6-syjTgTnJwjqGpRLBVyxLsBZiB0l6mQ3Czd3bPB5dyYAND8zOOpXPA": "雞塊",
+        "sZpc3ivqqHEsrajxAY-yMChsNmR_YxJQ7mrE4JO_b8GgQQ8BIMji4dBKZQ": "承育",
+        "mXP21reqkRfE8iwIjMDWphncopScfMXdFVCc1X0DA1fkaYHiwcKgU1vytA": "俊暉",
+        "yeHhi8Rta1O9h1VxUDqwVtD0M_xej3kSKtYlw1te8qB-lkf560fVEvqBwg": "柏維",
+        "nDkCarIOAAl8z5zBWhoe22LBv4F8pgE6GKPh7s_lCM9NcCJzuYd7hYVdFg": "西瓜",
+        "_qH-DGKcQs-ykgXibkR7WWDiOpEPfYWk2uycllY_GSWEj2vNnThp0VnOlA": "子郡",
+        "h4tnXW4opIzxM9wenaXOGOisJKgyC5D7fLouW_eAiXmDiXUYPXyLASjcnQ": "所代"
     }
 
     all_data = {}
     
     for summoner_id, nickname in SUMMONER_IDS.items():
         url = f"{BASE_URL}{summoner_id}"
-        params = {"api_key": "RGAPI-86e70caa-cea5-46c5-b2e3-862f895475e7"}
-        
+        params = {"api_key": "RGAPI-a847ed6c-78b1-480d-85f3-4d3969e7130a"}
+        #RGAPI-a847ed6c-78b1-480d-85f3-4d3969e7130a
         try:
             response = requests.get(url, headers=HEADERS, params=params)
             response.raise_for_status()  # 如果請求不成功則拋出異常
