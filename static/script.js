@@ -27,20 +27,38 @@ function updatePlayerData() {
             });
 
             sortedPlayers.forEach(([name, playerData]) => {
+                const nameMapping = {
+                "Q蛇":"Q蛇醬與鼠牛虎兔龍蛇馬羊猴雞狗豬",
+                "礎揚":"細微的鐵牌操作",
+                "雞塊":"蔡英雯玲",
+                "承育":"符號動態系統",
+                "俊暉":"天才945",
+                "柏維":"政治大學大英明神武羽球王子鄒礎揚",
+                "西瓜":"章魚大西瓜",
+                "子郡":"勒貝格測度",
+                "所代":"政治大學動態系統第二把交椅蔡承育"}
+
                 const player = playerData[0];
+                const urlName = nameMapping[name] || name; // 如果在字典中找不到對應，就使用原名
                 const card = document.createElement('div');
-                card.className = 'player-card';
-                card.innerHTML = `
-                    <img src="/static/images/${player.tier.toLowerCase()}.webp" alt="${player.tier}" class="rank-icon">
-                    <div class="player-info">
-                        <div class="player-name">${name}</div>
-                        <div class="player-rank">${player.rank}</div>
-                        <span class="spacer"></span>
-                        <div class="player-lp">${player.leaguePoints} LP</div>
-                    </div>
-                `;
-                container.appendChild(card);
-            });
+    card.className = 'player-card';
+    
+    card.innerHTML = `
+        <img src="/static/images/${player.tier.toLowerCase()}.webp" alt="${player.tier}" class="rank-icon">
+        <div class="player-info">
+            <div class="player-name">
+                <a href="https://tactics.tools/player/tw/${encodeURIComponent(urlName)}" style="text-decoration: none; color: inherit;">
+                    ${name}
+                </a>
+            </div>
+            <div class="player-rank">${player.rank}</div>
+            <span class="spacer"></span>
+            <div class="player-lp">${player.leaguePoints} LP</div>
+        </div>
+    `;
+    
+    container.appendChild(card);
+});
         });
 }
 
