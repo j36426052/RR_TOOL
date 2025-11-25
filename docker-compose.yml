@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: rr_tool_web
+    environment:
+      RIOT_API_KEY: ${RIOT_API_KEY}
+      PORT: 5004
+      FLASK_DEBUG: 0
+    ports:
+      - "5004:5004"
+    restart: unless-stopped
+    # 如需掛載程式碼做開發，可取消下行註解：
+    # volumes:
+    #   - .:/app
+
+# 可另外建立 .env 檔案存放 RIOT_API_KEY

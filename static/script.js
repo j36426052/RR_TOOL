@@ -5,7 +5,17 @@ function updatePlayerData() {
             const container = document.getElementById('players-container');
             container.innerHTML = '';
 
+            console.log(data);
+
             const sortedPlayers = Object.entries(data).sort((a, b) => {
+
+                if (!a[1] || a[1].length === 0) {
+                    return 1; // 將 a 放到最後
+                }
+                if (!b[1] || b[1].length === 0) {
+                    return -1; // 將 b 放到最後
+                }
+
                 const rankOrder = ['CHALLENGER', 'GRANDMASTER', 'MASTER', 'DIAMOND', 'PLATINUM', 'GOLD', 'SILVER', 'BRONZE', 'IRON'];
                 const rankA = a[1][0].tier;
                 const rankB = b[1][0].tier;
@@ -43,21 +53,31 @@ function updatePlayerData() {
                 const card = document.createElement('div');
     card.className = 'player-card';
     
-    card.innerHTML = `
-        <img src="/static/images/${player.tier.toLowerCase()}.png" alt="${player.tier}" class="rank-icon">
-        <div class="player-info">
-            <div class="player-name">
-                <a href="https://tactics.tools/player/tw/${encodeURIComponent(urlName)}" style="text-decoration: none; color: inherit;">
-                    ${name}
-                </a>
-            </div>
-            <div class="player-rank">${player.rank}</div>
-            <span class="spacer"></span>
-            <div class="player-lp">${player.leaguePoints} LP</div>
-        </div>
-    `;
-    
-    container.appendChild(card);
+    if (player && player.tier) {
+                    card.innerHTML = `
+                        <img src="/static/images/${player.tier.toLowerCase()}.png" alt="${player.tier}" class="rank-icon">
+                        <div class="player-info">
+                            <div class="player-name">
+                                <a href="https://tactics.tools/player/tw/${encodeURIComponent(urlName)}" style="text-decoration: none; color: inherit;">
+                                    ${name}
+                                </a>
+                            </div>
+                            <div class="player-rank">${player.rank}</div>
+                            <span class="spacer"></span>
+                            <div class="player-lp">${player.leaguePoints} LP</div>
+                        </div>
+                    `;
+                } else {
+                    // 如果 player 不存在或 tier 不存在，顯示替代內容
+                    card.innerHTML = `
+                        <div class="player-info">
+                            <div class="player-name">${name}</div>
+                            <div class="player-rank">這季沒有玩</div>
+                        </div>
+                    `;
+                }
+
+                container.appendChild(card);
 });
         });
 }
