@@ -44,7 +44,7 @@ function updatePlayerData() {
     card.className = 'player-card';
     
     card.innerHTML = `
-        <img src="/static/images/${player.tier.toLowerCase()}.webp" alt="${player.tier}" class="rank-icon">
+        <img src="/static/images/${player.tier.toLowerCase()}.png" alt="${player.tier}" class="rank-icon">
         <div class="player-info">
             <div class="player-name">
                 <a href="https://tactics.tools/player/tw/${encodeURIComponent(urlName)}" style="text-decoration: none; color: inherit;">

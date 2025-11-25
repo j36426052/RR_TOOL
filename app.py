@@ -10,7 +10,7 @@ tft_data = {}
 
 def get_tft_data():
     # 基礎 URL
-    BASE_URL = "https://tw2.api.riotgames.com/tft/league/v1/entries/by-summoner/"
+    BASE_URL = "https://tw2.api.riotgames.com/tft/league/v1/by-puuid/"
 
     # 請求頭
     HEADERS = {
@@ -21,16 +21,19 @@ def get_tft_data():
     }
 
     # 玩家 ID 和暱稱的映射
+    # SUMMONER_IDS = {
+    #     "FaW_WlA-9IraPO13OFUmS4pT_aVpF1SfaYGlyAiJmUejRYXZe4TVg2j6Sg": "Q蛇",
+    #     "CF-pD_Fpj3n1M6b37kTstf40nkgUeKILduoNFYwhjL32_CEbbO00ij9dyA": "礎揚",
+    #     "oLe6-syjTgTnJwjqGpRLBVyxLsBZiB0l6mQ3Czd3bPB5dyYAND8zOOpXPA": "雞塊",
+    #     "sZpc3ivqqHEsrajxAY-yMChsNmR_YxJQ7mrE4JO_b8GgQQ8BIMji4dBKZQ": "承育",
+    #     "mXP21reqkRfE8iwIjMDWphncopScfMXdFVCc1X0DA1fkaYHiwcKgU1vytA": "俊暉",
+    #     "yeHhi8Rta1O9h1VxUDqwVtD0M_xej3kSKtYlw1te8qB-lkf560fVEvqBwg": "柏維",
+    #     "nDkCarIOAAl8z5zBWhoe22LBv4F8pgE6GKPh7s_lCM9NcCJzuYd7hYVdFg": "西瓜",
+    #     "_qH-DGKcQs-ykgXibkR7WWDiOpEPfYWk2uycllY_GSWEj2vNnThp0VnOlA": "子郡",
+    #     "h4tnXW4opIzxM9wenaXOGOisJKgyC5D7fLouW_eAiXmDiXUYPXyLASjcnQ": "所代"
+    # }
     SUMMONER_IDS = {
-        "FaW_WlA-9IraPO13OFUmS4pT_aVpF1SfaYGlyAiJmUejRYXZe4TVg2j6Sg": "Q蛇",
-        "CF-pD_Fpj3n1M6b37kTstf40nkgUeKILduoNFYwhjL32_CEbbO00ij9dyA": "礎揚",
-        "oLe6-syjTgTnJwjqGpRLBVyxLsBZiB0l6mQ3Czd3bPB5dyYAND8zOOpXPA": "雞塊",
-        "sZpc3ivqqHEsrajxAY-yMChsNmR_YxJQ7mrE4JO_b8GgQQ8BIMji4dBKZQ": "承育",
-        "mXP21reqkRfE8iwIjMDWphncopScfMXdFVCc1X0DA1fkaYHiwcKgU1vytA": "俊暉",
-        "yeHhi8Rta1O9h1VxUDqwVtD0M_xej3kSKtYlw1te8qB-lkf560fVEvqBwg": "柏維",
-        "nDkCarIOAAl8z5zBWhoe22LBv4F8pgE6GKPh7s_lCM9NcCJzuYd7hYVdFg": "西瓜",
-        "_qH-DGKcQs-ykgXibkR7WWDiOpEPfYWk2uycllY_GSWEj2vNnThp0VnOlA": "子郡",
-        "h4tnXW4opIzxM9wenaXOGOisJKgyC5D7fLouW_eAiXmDiXUYPXyLASjcnQ": "所代"
+        "MYOOriHSwafTIcXZhFI68Bttw7xIssbdAAzksXFWQ22P22jYt2cCFsANjltEfNm0gK5syCyDjjOX_A":"阿狗汪汪汪"
     }
 
     all_data = {}
@@ -43,6 +46,9 @@ def get_tft_data():
             response = requests.get(url, headers=HEADERS, params=params)
             response.raise_for_status()  # 如果請求不成功則拋出異常
             data = response.json()
+            print(data)
+
+            
             all_data[nickname] = data
         except requests.RequestException as e:
             print(f"Error fetching data for {nickname} (ID: {summoner_id}): {str(e)}")
