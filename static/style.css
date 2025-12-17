@@ -46,12 +46,38 @@ h1 {
 }
 
 .player-rank, .player-lp {
-    font-size: 2em; /* Increase font size */
+    font-size: 1.5em; /* Slightly decrease font size for better readability */
     color: #666;
     font-weight: bold; /* Make the text bold for better visibility */
 }
 
 .spacer {
     display: inline-block;
-    width: 20px; /* 设置你想要的空格宽度 */
+    width: 20px; /* Set the desired space width */
+}
+
+/* 按鈕樣式 */
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff; /* 預設背景顏色 */
+    color: white; /* 預設字體顏色 */
+    cursor: pointer; /* 鼠標懸停時顯示手型 */
+    font-size: 16px; /* 字體大小 */
+    transition: background-color 0.3s, transform 0.2s; /* 添加過渡效果 */
+}
+
+button:hover {
+    background-color: #0056b3; /* 懸停時的背景顏色 */
+}
+
+/* 高亮狀態 */
+button.active {
+    background-color: #0056b3; /* 高亮背景顏色 */
+    color: #ffffff; /* 高亮字體顏色 */
+    border: 2px solid #003d80; /* 高亮邊框顏色 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 添加陰影 */
+    transform: scale(1.05); /* 略微放大 */
 }
