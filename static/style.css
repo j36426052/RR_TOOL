@@ -1,25 +1,57 @@
+/* 基本樣式 */
 body {
     font-family: Arial, sans-serif;
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #f0f0f0;
+    background-color: #f0f0f0; /* 預設淺色背景 */
+    color: #333; /* 預設深色字體 */
+    transition: background-color 0.3s, color 0.3s; /* 過渡效果 */
+}
+
+body.dark-mode {
+    background-color: #121212; /* 深色背景 */
+    color: #e0e0e0; /* 淺色字體 */
 }
 
 h1 {
     text-align: center;
-    color: #333;
 }
 
+/* 切換模式按鈕樣式 */
+.mode-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff; /* 按鈕背景顏色 */
+    color: white; /* 按鈕字體顏色 */
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.mode-toggle:hover {
+    background-color: #0056b3; /* 懸停時的背景顏色 */
+}
+
+/* 玩家卡片樣式 */
 .player-card {
-    background-color: white;
+    background-color: white; /* 預設淺色卡片背景 */
     border-radius: 10px;
     padding: 15px;
     margin-bottom: 15px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Ensures space distribution */
+    justify-content: space-between;
+}
+
+body.dark-mode .player-card {
+    background-color: #1e1e1e; /* 深色卡片背景 */
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1); /* 淺色陰影 */
 }
 
 .rank-icon {
@@ -37,23 +69,24 @@ h1 {
 .player-name {
     font-size: 1.2em;
     font-weight: bold;
-    margin-right: auto; /* Pushes rank and points to the right */
+    margin-right: auto; /* 推動分數到右側 */
 }
 
 .rank-points-container {
     display: flex;
     align-items: center;
+    justify-content: flex-end; /* 將分數部分對齊至右邊 */
+    flex-basis: 100%; /* 使其擴展以填滿空間 */
 }
 
 .player-rank, .player-lp {
-    font-size: 1.5em; /* Slightly decrease font size for better readability */
-    color: #666;
-    font-weight: bold; /* Make the text bold for better visibility */
+    font-size: 1.5em;
+    font-weight: bold;
 }
 
 .spacer {
     display: inline-block;
-    width: 20px; /* Set the desired space width */
+    width: 20px;
 }
 
 /* 按鈕樣式 */
@@ -64,9 +97,9 @@ button {
     border-radius: 5px;
     background-color: #007bff; /* 預設背景顏色 */
     color: white; /* 預設字體顏色 */
-    cursor: pointer; /* 鼠標懸停時顯示手型 */
-    font-size: 16px; /* 字體大小 */
-    transition: background-color 0.3s, transform 0.2s; /* 添加過渡效果 */
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 button:hover {
@@ -78,6 +111,6 @@ button.active {
     background-color: #0056b3; /* 高亮背景顏色 */
     color: #ffffff; /* 高亮字體顏色 */
     border: 2px solid #003d80; /* 高亮邊框顏色 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 添加陰影 */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2); /* 添加陰影 */
     transform: scale(1.05); /* 略微放大 */
 }

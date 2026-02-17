@@ -123,6 +123,12 @@ document.getElementById('double-player-btn').addEventListener('click', () => {
     setActiveButton('double-player-btn'); // 設置按鈕狀態
 });
 
+document.getElementById('mode-toggle').addEventListener('click', function() {
+    document.body.classList.toggle('dark-mode');
+    this.textContent = document.body.classList.contains('dark-mode') ? '切換到淺色模式' : '切換到深色模式';
+});
+
+
 // 設置按鈕狀態
 function setActiveButton(activeButtonId) {
     const buttons = document.querySelectorAll('.player-btn'); // 確保選擇到所有按鈕
